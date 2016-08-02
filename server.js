@@ -2,9 +2,9 @@ var express = require('express');
 var moment = require('moment');
 var app = express();
 
-app.get('/', function (req, res) {
-  res.send("Hello World!");
-});
+//app.set('views', __dirname + '/views');
+
+app.use('/', express.static(__dirname + '/public'));
 
 app.get('/:date', function (req, res) {
   var numbers = /^[0-9]+$/;
